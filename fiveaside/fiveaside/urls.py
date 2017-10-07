@@ -23,4 +23,5 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     # home url
     url(r'^$', views.Home.as_view(), name='home'),
+    url(r'^teams/', include('teams.urls', namespace='teams')),
 ]
