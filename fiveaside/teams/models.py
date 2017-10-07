@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.urlresolvers import reverse
 
 POSITIONS = [
     ('GK', 'Goalkeeper'),
@@ -14,6 +15,9 @@ class Team(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse("teams:detail", args=(self.pk,))
 
 
 class Player(models.Model):

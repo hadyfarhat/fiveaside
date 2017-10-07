@@ -5,7 +5,9 @@
 
 {% block content %}
 
+    <a href="{% url 'teams:update' pk=team.pk %}">Update</a> <a href="{% url 'teams:delete' pk=team.pk %}">Delete</a>
     <h2>{{team.name}}</h2>
+    <h5>Managed by {{team.coach}}</h5>
 
     <!-- Player List -->
     {% for player in team.players.all %}
