@@ -1,9 +1,17 @@
 {% extends '_base.html' %}
+{% load teams_extras %}
 
 {% block title %}{{ team.name }}{% endblock title %}
 
 {% block content %}
 
     <h2>{{team.name}}</h2>
+
+    <!-- Player List -->
+    {% for player in team.players.all %}
+        <ul>
+            <li>{{player.position}} | {{player.name}}</li>
+        </ul>
+    {% endfor %}
 
 {% endblock content %}

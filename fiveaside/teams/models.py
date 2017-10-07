@@ -22,4 +22,4 @@ class Player(models.Model):
     team = models.ForeignKey(Team, related_name="players")
 
     def __str__(self):
-        return "{name} plays for {team}".format(self.name, self.team)
+        return "{name} plays for {team}".format(name=self.name, team=self.team)
